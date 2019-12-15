@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191215 14:57:05.901" generator="Robot 3.1.2 (Python 2.7.15rc1 on linux2)">
+<suite source="/home/tester/RobotFramework/spanish.robot" id="s1" name="Spanish">
+<test id="s1-t1" name="Prueba 1">
+<kw name="Es así ahora: veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} setup</arg>
+</arguments>
+<kw name="webpage setup" library="mykeywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191215 14:57:06.254" level="INFO">Opening browser 'firefox' to base url 'https://poczta.wp.pl'.</msg>
+<msg timestamp="20191215 14:57:06.257" level="INFO">Firefox driver log is always forced to to: /home/tester/RobotFramework/geckodriver-43.log</msg>
+<status status="PASS" endtime="20191215 14:57:23.284" starttime="20191215 14:57:06.253"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.285" starttime="20191215 14:57:06.253"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.285" starttime="20191215 14:57:06.252"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.285" starttime="20191215 14:57:06.251"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.286" starttime="20191215 14:57:06.250"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.286" starttime="20191215 14:57:06.250"></status>
+</kw>
+<kw name="No veo palabras logged en el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${logged}</arg>
+</arguments>
+<assign>
+<var>${words}</var>
+</assign>
+<kw name="logged" library="mykeywords">
+<status status="PASS" endtime="20191215 14:57:23.291" starttime="20191215 14:57:23.290"></status>
+</kw>
+<msg timestamp="20191215 14:57:23.291" level="INFO">${words} = Odebrane</msg>
+<status status="PASS" endtime="20191215 14:57:23.291" starttime="20191215 14:57:23.289"></status>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} check</arg>
+<arg>${words}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="webpage check" library="mykeywords">
+<arguments>
+<arg>${words}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain</arg>
+<arg>${slowo}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${slowo}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191215 14:57:23.880" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191215 14:57:23.880" starttime="20191215 14:57:23.545"></status>
+</kw>
+<msg timestamp="20191215 14:57:23.883" level="FAIL">Page should have contained text 'Odebrane' but did not.</msg>
+<status status="FAIL" endtime="20191215 14:57:23.884" starttime="20191215 14:57:23.296"></status>
+</kw>
+<msg timestamp="20191215 14:57:23.884" level="INFO">${result} = False</msg>
+<status status="PASS" endtime="20191215 14:57:23.884" starttime="20191215 14:57:23.295"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>OK</arg>
+<arg>NOTOK</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20191215 14:57:23.887" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:57:23.887" starttime="20191215 14:57:23.885"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.888" starttime="20191215 14:57:23.293"></status>
+</kw>
+<msg timestamp="20191215 14:57:23.888" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:57:23.889" starttime="20191215 14:57:23.292"></status>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are equal.</doc>
+<arguments>
+<arg>OK</arg>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" endtime="20191215 14:57:23.890" starttime="20191215 14:57:23.889"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:23.890" starttime="20191215 14:57:23.287"></status>
+</kw>
+<kw name="entonces uso las palabras credentials en webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${cred}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+<var>${pass}</var>
+</assign>
+<kw name="credentials" library="mykeywords">
+<status status="PASS" endtime="20191215 14:57:23.896" starttime="20191215 14:57:23.894"></status>
+</kw>
+<msg timestamp="20191215 14:57:23.896" level="INFO">${user} = testerwsb_t1</msg>
+<msg timestamp="20191215 14:57:23.896" level="INFO">${pass} = adam1234</msg>
+<status status="PASS" endtime="20191215 14:57:23.896" starttime="20191215 14:57:23.893"></status>
+</kw>
+<kw name="Enter Credentials" library="mykeywords">
+<arguments>
+<arg>${user}</arg>
+<arg>${pass}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20191215 14:57:23.899" level="INFO">Typing text 'testerwsb_t1' into text field '//*[@id="login"]'.</msg>
+<status status="PASS" endtime="20191215 14:57:24.026" starttime="20191215 14:57:23.898"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT PASSWORD}</arg>
+<arg>${pass}</arg>
+</arguments>
+<msg timestamp="20191215 14:57:24.028" level="INFO">Typing text 'adam1234' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" endtime="20191215 14:57:24.115" starttime="20191215 14:57:24.027"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${ZALOGUJ BUTTON}</arg>
+</arguments>
+<msg timestamp="20191215 14:57:24.117" level="INFO">Clicking button '//*[@id="btnSubmit"]'.</msg>
+<status status="PASS" endtime="20191215 14:57:27.775" starttime="20191215 14:57:24.116"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15</arg>
+</arguments>
+<msg timestamp="20191215 14:57:42.778" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20191215 14:57:42.778" starttime="20191215 14:57:27.776"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:42.778" starttime="20191215 14:57:23.897"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:42.779" starttime="20191215 14:57:23.891"></status>
+</kw>
+<kw name="por esto: veo palabras logged en webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="veo palabras logged en webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${logged}</arg>
+</arguments>
+<assign>
+<var>${words}</var>
+</assign>
+<kw name="logged" library="mykeywords">
+<status status="PASS" endtime="20191215 14:57:42.787" starttime="20191215 14:57:42.783"></status>
+</kw>
+<msg timestamp="20191215 14:57:42.788" level="INFO">${words} = Odebrane</msg>
+<status status="PASS" endtime="20191215 14:57:42.788" starttime="20191215 14:57:42.782"></status>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} check</arg>
+<arg>${words}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="webpage check" library="mykeywords">
+<arguments>
+<arg>${words}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain</arg>
+<arg>${slowo}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${slowo}</arg>
+</arguments>
+<msg timestamp="20191215 14:57:42.889" level="INFO">Current page contains text 'Odebrane'.</msg>
+<status status="PASS" endtime="20191215 14:57:42.889" starttime="20191215 14:57:42.792"></status>
+</kw>
+<msg timestamp="20191215 14:57:42.890" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20191215 14:57:42.890" starttime="20191215 14:57:42.791"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>OK</arg>
+<arg>NOTOK</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20191215 14:57:42.891" level="INFO">${result} = OK</msg>
+<status status="PASS" endtime="20191215 14:57:42.891" starttime="20191215 14:57:42.890"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:42.891" starttime="20191215 14:57:42.789"></status>
+</kw>
+<msg timestamp="20191215 14:57:42.891" level="INFO">${result} = OK</msg>
+<status status="PASS" endtime="20191215 14:57:42.891" starttime="20191215 14:57:42.788"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>OK</arg>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" endtime="20191215 14:57:42.892" starttime="20191215 14:57:42.892"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:42.892" starttime="20191215 14:57:42.781"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:42.893" starttime="20191215 14:57:42.780"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:42.893" starttime="20191215 14:57:42.779"></status>
+</kw>
+<kw name="después de esto ya no veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="no veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} teardown</arg>
+</arguments>
+<kw name="webpage teardown" library="mykeywords">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20191215 14:57:49.153" starttime="20191215 14:57:42.896"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:49.154" starttime="20191215 14:57:42.896"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:49.154" starttime="20191215 14:57:42.895"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:49.155" starttime="20191215 14:57:42.895"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:49.155" starttime="20191215 14:57:42.894"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:49.155" starttime="20191215 14:57:42.893"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:49.156" critical="yes" starttime="20191215 14:57:06.248"></status>
+</test>
+<test id="s1-t2" name="Prueba 2">
+<kw name="Es así ahora: veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} setup</arg>
+</arguments>
+<kw name="webpage setup" library="mykeywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191215 14:57:49.166" level="INFO">Opening browser 'firefox' to base url 'https://poczta.wp.pl'.</msg>
+<msg timestamp="20191215 14:57:49.169" level="INFO">Firefox driver log is always forced to to: /home/tester/RobotFramework/geckodriver-44.log</msg>
+<status status="PASS" endtime="20191215 14:57:59.744" starttime="20191215 14:57:49.165"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:59.745" starttime="20191215 14:57:49.164"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:59.745" starttime="20191215 14:57:49.163"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:59.745" starttime="20191215 14:57:49.162"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:59.746" starttime="20191215 14:57:49.161"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:57:59.746" starttime="20191215 14:57:49.159"></status>
+</kw>
+<kw name="No veo palabras logged en el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${logged}</arg>
+</arguments>
+<assign>
+<var>${words}</var>
+</assign>
+<kw name="logged" library="mykeywords">
+<status status="PASS" endtime="20191215 14:57:59.752" starttime="20191215 14:57:59.751"></status>
+</kw>
+<msg timestamp="20191215 14:57:59.752" level="INFO">${words} = Odebrane</msg>
+<status status="PASS" endtime="20191215 14:57:59.752" starttime="20191215 14:57:59.750"></status>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} check</arg>
+<arg>${words}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="webpage check" library="mykeywords">
+<arguments>
+<arg>${words}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain</arg>
+<arg>${slowo}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${slowo}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191215 14:58:00.366" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191215 14:58:00.367" starttime="20191215 14:58:00.064"></status>
+</kw>
+<msg timestamp="20191215 14:58:00.367" level="FAIL">Page should have contained text 'Odebrane' but did not.</msg>
+<status status="FAIL" endtime="20191215 14:58:00.367" starttime="20191215 14:57:59.775"></status>
+</kw>
+<msg timestamp="20191215 14:58:00.367" level="INFO">${result} = False</msg>
+<status status="PASS" endtime="20191215 14:58:00.368" starttime="20191215 14:57:59.771"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>OK</arg>
+<arg>NOTOK</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20191215 14:58:00.369" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:58:00.369" starttime="20191215 14:58:00.368"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:00.369" starttime="20191215 14:57:59.769"></status>
+</kw>
+<msg timestamp="20191215 14:58:00.369" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:58:00.369" starttime="20191215 14:57:59.755"></status>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are equal.</doc>
+<arguments>
+<arg>OK</arg>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" endtime="20191215 14:58:00.371" starttime="20191215 14:58:00.370"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:00.371" starttime="20191215 14:57:59.748"></status>
+</kw>
+<kw name="entonces uso las palabras bad credentials en webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${cred}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+<var>${pass}</var>
+</assign>
+<kw name="bad credentials" library="mykeywords">
+<status status="PASS" endtime="20191215 14:58:00.374" starttime="20191215 14:58:00.373"></status>
+</kw>
+<msg timestamp="20191215 14:58:00.374" level="INFO">${user} = aaa</msg>
+<msg timestamp="20191215 14:58:00.374" level="INFO">${pass} = bbbb</msg>
+<status status="PASS" endtime="20191215 14:58:00.374" starttime="20191215 14:58:00.373"></status>
+</kw>
+<kw name="Enter Credentials" library="mykeywords">
+<arguments>
+<arg>${user}</arg>
+<arg>${pass}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20191215 14:58:00.377" level="INFO">Typing text 'aaa' into text field '//*[@id="login"]'.</msg>
+<status status="PASS" endtime="20191215 14:58:00.469" starttime="20191215 14:58:00.376"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT PASSWORD}</arg>
+<arg>${pass}</arg>
+</arguments>
+<msg timestamp="20191215 14:58:00.470" level="INFO">Typing text 'bbbb' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" endtime="20191215 14:58:00.750" starttime="20191215 14:58:00.470"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${ZALOGUJ BUTTON}</arg>
+</arguments>
+<msg timestamp="20191215 14:58:00.751" level="INFO">Clicking button '//*[@id="btnSubmit"]'.</msg>
+<status status="PASS" endtime="20191215 14:58:02.708" starttime="20191215 14:58:00.750"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15</arg>
+</arguments>
+<msg timestamp="20191215 14:58:17.710" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20191215 14:58:17.710" starttime="20191215 14:58:02.708"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:17.710" starttime="20191215 14:58:00.375"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:17.710" starttime="20191215 14:58:00.372"></status>
+</kw>
+<kw name="por esto: no veo palabras logged en el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="no veo palabras logged en el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${logged}</arg>
+</arguments>
+<assign>
+<var>${words}</var>
+</assign>
+<kw name="logged" library="mykeywords">
+<status status="PASS" endtime="20191215 14:58:17.715" starttime="20191215 14:58:17.715"></status>
+</kw>
+<msg timestamp="20191215 14:58:17.715" level="INFO">${words} = Odebrane</msg>
+<status status="PASS" endtime="20191215 14:58:17.715" starttime="20191215 14:58:17.714"></status>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} check</arg>
+<arg>${words}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="webpage check" library="mykeywords">
+<arguments>
+<arg>${words}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain</arg>
+<arg>${slowo}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${slowo}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191215 14:58:18.164" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191215 14:58:18.164" starttime="20191215 14:58:17.914"></status>
+</kw>
+<msg timestamp="20191215 14:58:18.165" level="FAIL">Page should have contained text 'Odebrane' but did not.</msg>
+<status status="FAIL" endtime="20191215 14:58:18.165" starttime="20191215 14:58:17.718"></status>
+</kw>
+<msg timestamp="20191215 14:58:18.165" level="INFO">${result} = False</msg>
+<status status="PASS" endtime="20191215 14:58:18.165" starttime="20191215 14:58:17.718"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>OK</arg>
+<arg>NOTOK</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20191215 14:58:18.166" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:58:18.167" starttime="20191215 14:58:18.166"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:18.167" starttime="20191215 14:58:17.717"></status>
+</kw>
+<msg timestamp="20191215 14:58:18.167" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:58:18.167" starttime="20191215 14:58:17.716"></status>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are equal.</doc>
+<arguments>
+<arg>OK</arg>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" endtime="20191215 14:58:18.168" starttime="20191215 14:58:18.168"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:18.168" starttime="20191215 14:58:17.713"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:18.169" starttime="20191215 14:58:17.712"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:18.169" starttime="20191215 14:58:17.711"></status>
+</kw>
+<kw name="después de esto ya no veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="no veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} teardown</arg>
+</arguments>
+<kw name="webpage teardown" library="mykeywords">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20191215 14:58:23.406" starttime="20191215 14:58:18.175"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:23.406" starttime="20191215 14:58:18.173"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:23.407" starttime="20191215 14:58:18.172"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:23.407" starttime="20191215 14:58:18.171"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:23.407" starttime="20191215 14:58:18.170"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:23.407" starttime="20191215 14:58:18.170"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:23.408" critical="yes" starttime="20191215 14:57:49.158"></status>
+</test>
+<test id="s1-t3" name="Prueba 3">
+<kw name="Es así ahora: veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} setup</arg>
+</arguments>
+<kw name="webpage setup" library="mykeywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191215 14:58:23.415" level="INFO">Opening browser 'firefox' to base url 'https://poczta.wp.pl'.</msg>
+<msg timestamp="20191215 14:58:23.417" level="INFO">Firefox driver log is always forced to to: /home/tester/RobotFramework/geckodriver-45.log</msg>
+<status status="PASS" endtime="20191215 14:58:34.151" starttime="20191215 14:58:23.414"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.153" starttime="20191215 14:58:23.413"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.154" starttime="20191215 14:58:23.412"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.155" starttime="20191215 14:58:23.412"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.155" starttime="20191215 14:58:23.411"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.156" starttime="20191215 14:58:23.410"></status>
+</kw>
+<kw name="No veo palabras logged en el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${logged}</arg>
+</arguments>
+<assign>
+<var>${words}</var>
+</assign>
+<kw name="logged" library="mykeywords">
+<status status="PASS" endtime="20191215 14:58:34.169" starttime="20191215 14:58:34.168"></status>
+</kw>
+<msg timestamp="20191215 14:58:34.169" level="INFO">${words} = Odebrane</msg>
+<status status="PASS" endtime="20191215 14:58:34.169" starttime="20191215 14:58:34.166"></status>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} check</arg>
+<arg>${words}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="webpage check" library="mykeywords">
+<arguments>
+<arg>${words}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain</arg>
+<arg>${slowo}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${slowo}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191215 14:58:34.777" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191215 14:58:34.777" starttime="20191215 14:58:34.436"></status>
+</kw>
+<msg timestamp="20191215 14:58:34.778" level="FAIL">Page should have contained text 'Odebrane' but did not.</msg>
+<status status="FAIL" endtime="20191215 14:58:34.778" starttime="20191215 14:58:34.176"></status>
+</kw>
+<msg timestamp="20191215 14:58:34.778" level="INFO">${result} = False</msg>
+<status status="PASS" endtime="20191215 14:58:34.778" starttime="20191215 14:58:34.173"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>OK</arg>
+<arg>NOTOK</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20191215 14:58:34.780" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:58:34.780" starttime="20191215 14:58:34.779"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.780" starttime="20191215 14:58:34.172"></status>
+</kw>
+<msg timestamp="20191215 14:58:34.781" level="INFO">${result} = NOTOK</msg>
+<status status="PASS" endtime="20191215 14:58:34.781" starttime="20191215 14:58:34.170"></status>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are equal.</doc>
+<arguments>
+<arg>OK</arg>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" endtime="20191215 14:58:34.782" starttime="20191215 14:58:34.781"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:34.782" starttime="20191215 14:58:34.164"></status>
+</kw>
+<kw name="después de esto ya no veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="no veo el webpage" library="NSM">
+<kw name="Run Keyword" library="BuiltIn">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${page} teardown</arg>
+</arguments>
+<kw name="webpage teardown" library="mykeywords">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20191215 14:58:41.184" starttime="20191215 14:58:34.792"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:41.184" starttime="20191215 14:58:34.791"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:41.184" starttime="20191215 14:58:34.790"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:41.184" starttime="20191215 14:58:34.789"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:41.184" starttime="20191215 14:58:34.788"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:41.185" starttime="20191215 14:58:34.785"></status>
+</kw>
+<status status="PASS" endtime="20191215 14:58:41.185" critical="yes" starttime="20191215 14:58:23.409"></status>
+</test>
+<metadata>
+<item name="Author">Adam Przybyla &lt;adam.przybyla@gmail.com&gt;</item>
+</metadata>
+<status status="PASS" endtime="20191215 14:58:41.187" starttime="20191215 14:57:05.905"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Spanish" pass="3">Spanish</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
